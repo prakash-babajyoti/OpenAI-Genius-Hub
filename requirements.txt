@@ -1,0 +1,11 @@
+streamlit
+openai
+python-dotenv
+pyperclip
+coverage
+pytest
+pytest-cov
+flask
+tenacity
+pyyaml
+pydantic>=2.0

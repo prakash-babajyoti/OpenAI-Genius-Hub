@@ -1,0 +1,70 @@
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+env/
+venv/
+.venv/
+
+# Environment variables
+.env
+.env.*
+
+# macOS system files
+.DS_Store
+
+# VS Code files
+.vscode/
+
+# Python packaging files
+*.egg
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+
+# Log files
+*.log
+
+# Streamlit cache files
+.streamlit/
+__pycache__/
+
+# Jupyter Notebook checkpoints (if any)
+.ipynb_checkpoints/
+
+# pyenv
+.python-version
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pycharm project files
+.idea/
+
+# Backup files
+*~
+
