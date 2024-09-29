@@ -15,21 +15,25 @@ def translate_text():
     """
     A Flask API endpoint that translates text from one language to another using OpenAI.
 
-    Expects a JSON payload with 'api_key', 'source_lang', 'target_lang', and 'text' fields.
+    Expects the 'Authorization' header to contain the API key.
     """
     try:
-        data = request.get_json()
+        # Extract the API key from the Authorization header
+        api_key = request.headers.get("Authorization")
 
-        # Extract required fields from the request
-        api_key = data.get("api_key")
+        if not api_key:
+            logger.error("API key missing in Authorization header.")
+            return jsonify({"error": "API key is required"}), 401
+
+        # Extract required fields from the request JSON
+        data = request.get_json()
         source_lang = data.get("source_lang")
         target_lang = data.get("target_lang")
         text = data.get("text")
 
-        # Validate input
-        if not api_key or not source_lang or not target_lang or not text:
-            logger.error("Missing fields: api_key, source_lang, target_lang, and text are required.")
-            return jsonify({"error": "api_key, source_lang, target_lang, and text are required"}), 400
+        if not source_lang or not target_lang or not text:
+            logger.error("Missing fields: source_lang, target_lang, and text are required.")
+            return jsonify({"error": "source_lang, target_lang, and text are required"}), 400
 
         # Initialize OpenAIGeniusClient with the API key
         client = OpenAIGeniusClient(api_key, model="gpt-3.5-turbo", temperature=0.7, max_tokens=1000)
@@ -40,7 +44,6 @@ def translate_text():
         # Perform translation
         translation, tokens_used = translator.execute(client)
 
-        # Respond with the translation result
         logger.info(f"Translation successful. Tokens used: {tokens_used}")
         return jsonify({
             "translation": translation,
