@@ -7,7 +7,7 @@ from src.config.logging_config import setup_logging
 from src.pages.chat_ui import chat_app
 from src.pages.prompt_generator_ui import prompt_generator_ui
 from src.pages.text_translator_ui import text_translator_ui
-from flask_server import start_flask_in_thread
+from flask_app import start_flask_in_thread
 
 
 def main():

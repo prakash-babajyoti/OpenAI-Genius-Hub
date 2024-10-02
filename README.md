@@ -31,12 +31,21 @@ OpenAI-Genius-Hub requires an OpenAI API key to interact with the OpenAI models.
 
 Alternatively, you can input the API key directly through the app's interface during runtime.
 
-### 5. Run the Application
+### 5. Run the streamlit Application with Flask
 To start the application, run the following command:
 ```bash
 streamlit run app.py
-```
 
+URL: http://localhost:8501/
+```
+### 6. Run the Flask Application Independently
+```bash
+python flask_app.py
+
+URL: http://127.0.0.1:5000/
+Swagger UI: http://127.0.0.1:5000/docs 
+Swagger Json: http://127.0.0.1:5000/swagger.json
+``` 
 ---
 
 This setup guide provides the necessary steps to get **OpenAI-Genius-Hub** up and running on your local machine. You can extend it later when you add more features or sections. Let me know if you need anything else!
