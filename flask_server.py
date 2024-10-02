@@ -25,3 +25,6 @@ def start_flask_in_thread():
     flask_thread = threading.Thread(target=run_flask)
     flask_thread.daemon = True  # Daemon thread will close when the main thread closes
     flask_thread.start()
+
+if __name__ == "__main__":
+    run_flask()

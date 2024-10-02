@@ -9,3 +9,4 @@ flask
 tenacity
 pyyaml
 pydantic>=2.0
+Flask-RESTX
