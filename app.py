@@ -6,6 +6,7 @@ from src.components.sidebar import configure_sidebar
 from src.config.logging_config import setup_logging
 from src.pages.chat_ui import chat_app
 from src.pages.prompt_generator_ui import prompt_generator_ui
+from src.pages.tell_joke_ui import tell_joke_ui
 from src.pages.text_translator_ui import text_translator_ui
 from flask_app import start_flask_in_thread
 
@@ -46,6 +47,8 @@ def main():
         text_translator_ui(client)
     elif app_mode == "Prompt Engineering Assistant":
         prompt_generator_ui(client)
+    elif app_mode == "Tell me a joke":
+        tell_joke_ui(client)
     else:
         logger.warning(f"Unknown app mode selected: {app_mode}")
 

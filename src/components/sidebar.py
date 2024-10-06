@@ -17,7 +17,7 @@ def configure_sidebar():
     st.sidebar.markdown("[Get OpenAI API Key](https://platform.openai.com/account/api-keys)")
 
     # Sidebar navigation for selecting the app mode
-    options = ["Chat", "Text Translator", "Prompt Engineering Assistant"]
+    options = ["Chat", "Text Translator", "Prompt Engineering Assistant", "Tell me a joke"]
     app_mode = st.sidebar.selectbox("Choose the app mode", options)
 
     # Add slider to configure the temperature
